@@ -21,12 +21,10 @@ class MovieController {
     
     // MARK: - Fetch Movies
     static func fetchMovies(movieNameSearchTerm: String, completion: @escaping (Result<[Movie],MovieError>) -> Void) {
-        
         guard let baseURL = baseURL else { return completion(.failure(.invalidURL))}
         let threeURL = baseURL.appendingPathComponent(threeComponent)
         let serachURL = threeURL.appendingPathComponent(searchComponent)
         let movieURL = serachURL.appendingPathComponent(movieComponent)
-        
         var components = URLComponents(url: movieURL, resolvingAgainstBaseURL: true)
         let apiQuery = URLQueryItem(name: apiKey, value: apiKeyValue)
         let searchMovieQuery = URLQueryItem(name: searchMovieKey, value: movieNameSearchTerm)
@@ -34,7 +32,7 @@ class MovieController {
         
         guard let finalURL = components?.url else { return completion(.failure(.invalidURL))}
         print("\nFinalURL for FetchMovie ::: \(finalURL)")
-        // https://api.themoviedb.org/3/search/movie?api_key=dce1a7c0d50cbf9104f074bd367277a8&query=Jack+Reacher
+        //https://api.themoviedb.org/3/search/movie?api_key=dce1a7c0d50cbf9104f074bd367277a8&query=Jack+Reacher
         
         URLSession.shared.dataTask(with: finalURL) { (data, response, error) in
             if let error = error {
@@ -79,3 +77,4 @@ class MovieController {
         }.resume()
     }
 }
+

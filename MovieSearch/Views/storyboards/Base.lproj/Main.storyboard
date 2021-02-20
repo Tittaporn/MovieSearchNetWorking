@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Movies-->
+        <!--🔍 Search Movies-->
         <scene sceneID="bTz-Yu-5AF">
             <objects>
                 <tableViewController id="7Dh-xG-QOh" customClass="MovieListTableViewController" customModule="MovieSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,11 +92,7 @@
                             <outlet property="delegate" destination="7Dh-xG-QOh" id="Zwf-n9-LpR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search Movies" id="85p-Z7-oKS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="star.fill" catalog="system" id="mrS-ZT-lZz">
-                            <color key="tintColor" systemColor="systemYellowColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="🔍 Search Movies" id="85p-Z7-oKS"/>
                     <connections>
                         <outlet property="movieSearchBar" destination="5VF-5d-3zh" id="VIu-p1-zE7"/>
                     </connections>
@@ -126,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="-1794" y="211"/>
         </scene>
-        <!--Favorite Movies-->
+        <!--Favorite Movies 🌟-->
         <scene sceneID="Lqg-UQ-JMM">
             <objects>
                 <tableViewController storyboardIdentifier="FavoriteMovieVC" id="cFV-sa-c4h" customClass="FavoriteMovieListTableViewController" customModule="MovieSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,31 +131,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.76912970400000003" green="0.98550523479999996" blue="0.95180232779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteMovieCell" textLabel="3Ke-ak-AXs" detailTextLabel="muW-SU-Xar" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="YFL-Ce-Gto">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="favoriteMovieCell" textLabel="3Ke-ak-AXs" detailTextLabel="muW-SU-Xar" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="YFL-Ce-Gto">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YFL-Ce-Gto" id="nCl-8h-Ygz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Ke-ak-AXs">
-                                            <rect key="frame" x="20" y="25" width="33" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Ke-ak-AXs">
+                                            <rect key="frame" x="20" y="20.5" width="38" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.095118124230000003" green="0.1320645205" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="muW-SU-Xar">
-                                            <rect key="frame" x="20" y="48.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="20" y="48" width="53" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.095118124230000003" green="0.1320645205" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.76912970400000003" green="0.98550523479999996" blue="0.95180232779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.76912970400000003" green="0.98550523479999996" blue="0.95180232779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="PBd-lk-uea" kind="show" identifier="toMovieVC" id="GZC-et-0G1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -167,11 +166,11 @@
                             <outlet property="delegate" destination="cFV-sa-c4h" id="n0L-6g-oi5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorite Movies" id="DhG-Np-eif"/>
+                    <navigationItem key="navigationItem" title="Favorite Movies 🌟" id="DhG-Np-eif"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHm-HI-vfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873.91304347826099" y="-656.25"/>
+            <point key="canvasLocation" x="1422" y="-606"/>
         </scene>
         <!--Movie View Controller-->
         <scene sceneID="UIm-s0-e7u">
@@ -290,6 +289,9 @@
             <point key="canvasLocation" x="511.59420289855075" y="135.9375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GZC-et-0G1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>

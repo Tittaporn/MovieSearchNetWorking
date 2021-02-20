@@ -14,8 +14,6 @@ class MovieListTableViewController: UITableViewController {
     
     // MARK: - Properties
     var movies: [Movie] = []
-    var favoriteMovies: [Movie] = []
-    
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -38,13 +36,12 @@ class MovieListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
         let movie = movies[indexPath.row]
-        cell.movie = movie
         cell.delegate = self
+        cell.movie = movie
         return cell
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMovieVC" {
             guard let indexPath = tableView.indexPathForSelectedRow,
@@ -54,13 +51,6 @@ class MovieListTableViewController: UITableViewController {
         }
     }
 }
-//        } else if segue.identifier == "toFavoriteListVC" {
-//            guard let destinationFavoriteVC = segue.destination as? FavoriteMovieListTableViewController else { return }
-//            let favoriteMovies = self.favoriteMovies
-//            destinationFavoriteVC.favoriteMovies = favoriteMovies
-//        }
-//    }
-//}
 
 // MARK: - Extension UISearchBarDelegate
 extension MovieListTableViewController: UISearchBarDelegate {
@@ -79,18 +69,26 @@ extension MovieListTableViewController: UISearchBarDelegate {
             }
         }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        movies = []
+        searchBar.resignFirstResponder()
+    }
 }
 
 // MARK: - Extension MovieTableCellDelegate
 extension MovieListTableViewController: MovieTableCellDelegate {
-    func favoriteMovieButtonTapped(movie: Movie, isFavorite: Bool) {
-        var isFavoriteMovie = isFavorite
-        if isFavoriteMovie {
-            self.favoriteMovies.append(movie)
+    func favoriteMovieButtonTapped(sender: MovieTableViewCell, isFavorite: Bool) {
+        guard let indexPath = tableView.indexPath(for: sender) else {return}
+        let movieToAddToFavorList = movies[indexPath.row]
+        if isFavorite {
+            FavoriteMovieController.shared.createFavoriteMovie(movie: movieToAddToFavorList)
+        } else {
+            FavoriteMovieController.shared.deleteMovieFromFavoriteListsWith(movie: movieToAddToFavorList)
         }
-        isFavoriteMovie.toggle()
-        print(favoriteMovies.count)
+        sender.updateViewCellWith(movie: movieToAddToFavorList)
         tableView.reloadData()
+        
     }
 }
 

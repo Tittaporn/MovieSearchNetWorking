@@ -22,6 +22,8 @@
 		3637A7A125C4857F009EFAC0 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637A7A025C4857F009EFAC0 /* MovieViewController.swift */; };
 		3637A7A625C49124009EFAC0 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637A7A525C49124009EFAC0 /* MovieTableViewCell.swift */; };
 		3637A7AB25C49E15009EFAC0 /* FavoriteMovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637A7AA25C49E15009EFAC0 /* FavoriteMovieListTableViewController.swift */; };
+		363C544B25E0EA3C003377FA /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363C544A25E0EA3C003377FA /* FavoriteMovie.swift */; };
+		363C545325E0EC37003377FA /* FavoriteMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363C545225E0EC37003377FA /* FavoriteMovieController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		3637A7A025C4857F009EFAC0 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		3637A7A525C49124009EFAC0 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		3637A7AA25C49E15009EFAC0 /* FavoriteMovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieListTableViewController.swift; sourceTree = "<group>"; };
+		363C544A25E0EA3C003377FA /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
+		363C545225E0EC37003377FA /* FavoriteMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3637A78725C46B51009EFAC0 /* MovieController.swift */,
+				363C545225E0EC37003377FA /* FavoriteMovieController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				3637A78C25C47003009EFAC0 /* Movie.swift */,
+				363C544A25E0EA3C003377FA /* FavoriteMovie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 				3637A74625C46A35009EFAC0 /* AppDelegate.swift in Sources */,
 				3637A7A625C49124009EFAC0 /* MovieTableViewCell.swift in Sources */,
 				3637A78D25C47003009EFAC0 /* Movie.swift in Sources */,
+				363C545325E0EC37003377FA /* FavoriteMovieController.swift in Sources */,
 				3637A7A125C4857F009EFAC0 /* MovieViewController.swift in Sources */,
+				363C544B25E0EA3C003377FA /* FavoriteMovie.swift in Sources */,
 				3637A74825C46A35009EFAC0 /* SceneDelegate.swift in Sources */,
 				3637A79725C475CB009EFAC0 /* UIViewController+Extensions.swift in Sources */,
 				3637A79C25C47C77009EFAC0 /* MovieListTableViewController.swift in Sources */,

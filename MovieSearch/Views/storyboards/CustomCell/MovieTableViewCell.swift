@@ -9,11 +9,10 @@ import UIKit
 
 // MARK: - Protocol
 protocol MovieTableCellDelegate: AnyObject {
-    func favoriteMovieButtonTapped(movie: Movie, isFavorite: Bool )
+    func favoriteMovieButtonTapped(sender: MovieTableViewCell, isFavorite: Bool)
 }
 
 class MovieTableViewCell: UITableViewCell {
-    
     
     // MARK: - Outlets
     @IBOutlet weak var movieTitleLabel: UILabel!
@@ -23,30 +22,23 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: - Properties
     var movie: Movie? {
         didSet {
-            updateViewCell()
+            updateViewCellWith(movie: movie!)
         }
     }
-    var favoriteMovies: [Movie] = []
-    var isFavorite: Bool = false
+    var isThisMovieFavorite: Bool = false
     weak var delegate: MovieTableCellDelegate?
     
     // MARK: - Actions
     @IBAction func favoriteBottonTapped(_ sender: Any) {
-        guard let movie = movie else { return }
-        isFavorite.toggle()
-        if isFavorite {
-            favoriteMovies.append(movie)
-        }
-        delegate?.favoriteMovieButtonTapped(movie: movie, isFavorite: isFavorite)
+        isThisMovieFavorite.toggle()
+        delegate?.favoriteMovieButtonTapped(sender: self, isFavorite: isThisMovieFavorite)
     }
     
     // MARK: - Helper Fuctions
-    func updateViewCell() {
-        guard let movie = movie else { return }
+    func   updateViewCellWith(movie: Movie) {
         movieTitleLabel.text = " \(movie.title)"
         movieRatingLabel.text = " Rating : \(movie.rating)"
-        
-        let starFavoriteImage = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        let starFavoriteImage = isThisMovieFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         favoriteButton.setImage(starFavoriteImage, for: .normal)
     }
 }

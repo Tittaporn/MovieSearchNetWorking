@@ -17,6 +17,7 @@ class MovieViewController: UIViewController {
     
     // MARK: - Properties
     var movie: Movie?
+    var favoriteMovie: FavoriteMovie?
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -26,16 +27,24 @@ class MovieViewController: UIViewController {
     
     // MARK: - Helper Fuctions
     func updateViews() {
-        guard let movie = movie else { return }
-        movieTitleLabel.text = movie.title
-        ratingLebel.text = "Rating : \(movie.rating)"
-        movieSummaryTextView.text = movie.summary
-        movieSummaryTextView.isEditable = false
-        fetchPosterImage(movie: movie)
+        if let movie = movie {
+            movieTitleLabel.text = movie.title
+            ratingLebel.text = "Rating : \(movie.rating)"
+            movieSummaryTextView.text = movie.summary
+            movieSummaryTextView.isEditable = false
+            fetchPosterImage(poster: movie.poster)
+        }
+        if let favoriteMovie = favoriteMovie {
+            movieTitleLabel.text = favoriteMovie.title
+            ratingLebel.text = "Rating : \(favoriteMovie.rating)"
+            movieSummaryTextView.text = favoriteMovie.summary
+            movieSummaryTextView.isEditable = false
+            fetchPosterImage(poster: favoriteMovie.poster)
+        }
     }
     
-    func fetchPosterImage(movie: Movie) {
-        MovieController.fetchPoster(with: movie.poster) { (result) in
+    func fetchPosterImage(poster: String) {
+        MovieController.fetchPoster(with: poster) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let posterImage):
