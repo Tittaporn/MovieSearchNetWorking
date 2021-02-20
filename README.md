@@ -1,8 +1,5 @@
 # MovieSearchNetWorking
 Week4 Assessment at DevMountain
-![Screen Shot 2021-02-20 at 3 08 20 AM](https://user-images.githubusercontent.com/57606580/108590826-249d2b00-732b-11eb-8373-9a05c29129bb.png)
-![Screen Shot 2021-02-20 at 3 07 50 AM](https://user-images.githubusercontent.com/57606580/108590828-2535c180-732b-11eb-8e35-9dbbf63f1c05.png)
-![Screen Shot 2021-02-20 at 3 07 33 AM](https://user-images.githubusercontent.com/57606580/108590829-25ce5800-732b-11eb-9abe-e2df7e28db2b.png)
 
 ## Instructions for MovieSearch
 ### Requirements
@@ -29,6 +26,10 @@ Week4 Assessment at DevMountain
 5) Parsing through the returned data in JSON format from network APIs
 6) Working with network API documentation.
 7) Intermediate UITableView concepts such as custom cells.
+
+![Screen Shot 2021-02-20 at 3 08 20 AM](https://user-images.githubusercontent.com/57606580/108590826-249d2b00-732b-11eb-8373-9a05c29129bb.png)
+![Screen Shot 2021-02-20 at 3 07 50 AM](https://user-images.githubusercontent.com/57606580/108590828-2535c180-732b-11eb-8e35-9dbbf63f1c05.png)
+![Screen Shot 2021-02-20 at 3 07 33 AM](https://user-images.githubusercontent.com/57606580/108590829-25ce5800-732b-11eb-9abe-e2df7e28db2b.png)
 
 ### @iOS App Development Bootcamp at Dev Mountain
 Over 13 demanding weeks in our iOS development bootcamp you’ll find out what it means to be an app developer. Using tools like Github and Xcode to collaborate, and languages like Objective-C and Swift to create, you’ll prepare for a career in tech. At the end of the course, students work with Software QA and UX Design students to create an app for Apple products.
